@@ -19,9 +19,9 @@ cd /data/scratch/DMP/UCEC/EVOLIMMU/hcrook/gestational_WES_WGS/results/variantcal
 
 for sampleid in $@ ; do
 	echo -e "\nanalysing sample " $sampleid
-	tumvcf="/data/scratch/DMP/UCEC/EVOLIMMU/hcrook/gestational_WES_WGS/results/filterVCF/tidy/t_$sampleid.hcfiltered.filtered.vcf"
+	tumvcf="/data/rds/DMP/UCEC/EVOLIMMU/hcrook/temp_results/filter_vcf/t_${sampleid}.hcfiltered2.filtered.vcf"
 	germvcf=$(ls [!t]_$sampleid/[!t]_$sampleid.haplotypecaller.filtered.vcf.gz | xargs realpath)
-	outputvcf="/data/scratch/DMP/UCEC/EVOLIMMU/hcrook/gestational_WES_WGS/results/filterVCF/tidy/$sampleid.germfiltered.hcfiltered.mutect2.filtered.vcf"
+	outputvcf="/data/scratch/DMP/UCEC/EVOLIMMU/hcrook/gestational_WES_WGS/results/filterVCF/tidy/$sampleid.germfiltered.hcfiltered2.mutect2.filtered.vcf"
 
 	echo -e "\ninput tumour vcf: " $tumvcf "\ninput germline vcf(s): " $germvcf "\noutput to: " $outputvcf
 	#bedtools command
